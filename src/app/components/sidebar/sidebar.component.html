@@ -1,0 +1,33 @@
+<div class="navBar">
+    <div class="navBar__upperContainer">
+        <div class="navBar__upperContainer__logoContainer"></div>
+        <div class="navBar__upperContainer__searchBarContainer">
+            <input type="text" placeholder="Cerca..">
+        </div>
+    </div>
+    <div class="navBar__midContainer">
+        <div class="navBarButton"
+            *ngFor="let button of navBarActions; index as i"
+            (click)="menuAction(button.label, i)"
+            [ngStyle]="{
+                'transform' : selectedTabUp.index==i ? 'translateX(15px)' : '', 
+                'background-color': selectedTabUp.index==i ? '#3a4a51': ''
+                }"
+        >
+            <div class="navBarButton--icon" [ngStyle]="{'background-image':'url('+button.icon_path+')'}"></div>
+            <div class="navBarButton--label">{{button.label}}</div>
+        </div>
+        <br><br><br>
+        <div class="navBarButton" *ngFor="let button of bottomSideButtonList; index as i" (click)="navigateTo(button.label)">
+            <div class="navBarButton--icon" [ngStyle]="{'background-image':'url('+button.path+')'}"></div>
+            <div class="navBarButton--label">{{button.label}}</div>
+        </div>
+    </div>
+    <div class="navBar__dropMenu"
+        [ngStyle]="{'left': openMenuFlag ? '100%': '-100%', 'z-index': openMenuFlag ? '0' : '-1'}"
+    >
+        <div class="navBar__dropMenu__item" *ngFor="let item of actualSubBenu, index as i">
+            <div class="navBar__dropMenu__item--label">{{item}}</div>
+        </div>
+    </div>
+</div>

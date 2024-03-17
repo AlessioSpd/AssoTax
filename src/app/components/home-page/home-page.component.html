@@ -1,0 +1,17 @@
+<div class="mainContainer">
+    <app-sidebar></app-sidebar>
+    <div class="mainContainer__contentPanel">
+        <div class="mainContainer__contentPanel__topBar">
+            <div class="mainContainer__contentPanel__topBar__button" *ngFor="let button of topBarButton; index as i" (click)="topBarClick(i)">
+                <div class="mainContainer__contentPanel__topBar__button--icon" [ngStyle]="{'background-image':'url('+button.path+')'}"></div>
+                <div class="mainContainer__contentPanel__topBar__button--label">{{button.label}}</div>
+                <div *ngIf="openNotifyFlag && i==0" class="mainContainer__contentPanel__topBar__button__notifyPanel">
+                    <div class="mainContainer__contentPanel__topBar__button__notifyPanel__notification" *ngFor="let notification of notificationStatic">
+                        <div class="mainContainer__contentPanel__topBar__button__notifyPanel__notification--icon"></div>
+                        <div class="mainContainer__contentPanel__topBar__button__notifyPanel__notification--label">{{notification}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
