@@ -1,6 +1,6 @@
 <div class="mainContainer">
-    <app-sidebar></app-sidebar>
-    <div class="mainContainer__contentPanel">
+    <app-sidebar (changeContentPanelEvent)="changeContentPanel($event)" ></app-sidebar>
+    <div class="mainContainer__contentPanel" [ngSwitch]="contentOpened">
         <div class="mainContainer__contentPanel__topBar">
             <div class="mainContainer__contentPanel__topBar__button" *ngFor="let button of topBarButton; index as i" (click)="topBarClick(i)">
                 <div class="mainContainer__contentPanel__topBar__button--icon" [ngStyle]="{'background-image':'url('+button.path+')'}"></div>
@@ -13,5 +13,6 @@
                 </div>
             </div>
         </div>
+        <app-pagina-soci *ngSwitchCase="'soci'"></app-pagina-soci>
     </div>
 </div>

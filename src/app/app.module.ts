@@ -9,12 +9,14 @@ import { MatIconModule} from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { PaginaSociComponent } from './components/pagina-soci/pagina-soci.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     SidebarComponent,
+    PaginaSociComponent,
   ],
   imports: [
     BrowserModule,

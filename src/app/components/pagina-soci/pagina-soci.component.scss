@@ -1,0 +1,26 @@
+.mainContainer {
+    width: 100%;
+    height: calc(100% - 50px);
+    // background-color: red;
+
+    & > * {
+        width: 100%;
+    }
+
+    &__header {
+        height: 50px;
+        display: flex;
+        justify-content: start;
+        align-items: flex-end;
+        
+        &--label {
+            width: auto;
+            height: auto;
+            font-family: Outfit;
+            font-weight: 400;
+            font-size: 40px;
+            margin-left: 50px;
+        }
+    }
+}
+

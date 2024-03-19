@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class HomePageComponent {
 
+  contentOpened: string = "Dashboard";
+
   topBarButton: {label:string, path: string}[] = [
     {label:"Notifiche", path:'../../../assets/svgs/notifiche_dark.svg'},
     {label:"Anno 2024", path:'../../../assets/svgs/anno_dark.svg'},
@@ -21,6 +23,10 @@ export class HomePageComponent {
     if(index == 0) {
       this.openNotifyFlag = !this.openNotifyFlag;
     }
+  }
+
+  changeContentPanel(path: string) {
+    this.contentOpened = path;
   }
 
 }

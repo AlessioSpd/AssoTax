@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { IMenu, sideBarMenu } from 'src/app/utils/IMenu';
 
 @Component({
   selector: 'app-sidebar',
@@ -10,45 +11,10 @@ export class SidebarComponent {
   openMenuFlag: boolean = false;
   selectedTabUp: {index: number, label: string} = {index:-1, label: ''};
 
-  navBarActions: {label:string, icon_path: string, sub_menu: string[]}[] = [
-    { 
-      label: 'Dashboard',
-      icon_path: '../../../assets/svgs/dashboard.svg',
-      sub_menu: []
-    },
-    { 
-      label: 'News',
-      icon_path: '../../../assets/svgs/notifiche.svg',
-      sub_menu: []
-    },
-    {
-      label:'Associazione',
-      icon_path: '../../../assets/svgs/associazione.svg',
-      sub_menu:['Dati', 'Direttivo', 'Verbali']
-    },
-    {
-      label:'Segreteria',
-      icon_path: '../../../assets/svgs/segreteria.svg',
-      sub_menu:['Tesserati','Soci','Certificati Medici','Moduli','Abbonamenti']
-    },
-    {
-      label:'Amministrazione',
-      icon_path: '../../../assets/svgs/amministrazione.svg',
-      sub_menu:[
-        'C/C & Cassa', 'Clienti', 'Fornitori', 'Entrate', 'Uscite', 'Fatturazione', 'Ricevute',
-        'Soggetti Compensi & Rimborsi', 'Codici IVA', 'Numeratori', 'Centri di Costo', 'Piano dei Conti',
-        'Bilancio Preventivo', 'Partitario', 'Iva', 'Gestione Cassa', 'Giroconto', 'Immobilizzazioni'
-      ]
-    },
-    { 
-      label: 'Utiliy',
-      icon_path: '../../../assets/svgs/impostazioni.svg',
-      sub_menu: []
-    },
-    
-  ];
+  navBarActions: IMenu[] = sideBarMenu;
+  actualSubBenu: IMenu[] = [];
 
-  actualSubBenu = [''];
+  @Output() changeContentPanelEvent = new EventEmitter<string>();
 
   bottomSideButtonList: {label: string, path: string}[] = [
     {label:'Guida' , path:'../../../assets/svgs/guida.svg'},
@@ -58,8 +24,8 @@ export class SidebarComponent {
   ];
 
   menuAction(label: string, index: number) {
-    
-    if(this.navBarActions[index].sub_menu.length == 0) {
+    if(this.navBarActions[index].subMenu.length == 0) {
+      this.navigateTo(label);
       this.openMenuFlag = false;
       if(this.selectedTabUp.index == index) {
         label = '';
@@ -82,11 +48,15 @@ export class SidebarComponent {
     this.selectedTabUp.index = index;
 
     if(index != -1) {
-      this.actualSubBenu = this.navBarActions[index].sub_menu;
-    }
+      this.actualSubBenu = this.navBarActions[index].subMenu;
+    }      
   }
 
   navigateTo(path: string){
+    path = path.toLocaleLowerCase();
+    path.replace(/ /g,"_");
+    console.log(path);
+    this.changeContentPanelEvent.emit(path);
     this.openMenuFlag = false;
     this.selectedTabUp.label = '';
     this.selectedTabUp.index = -1;
