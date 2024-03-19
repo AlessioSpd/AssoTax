@@ -79,96 +79,178 @@ export const sideBarMenu: IMenu[] = [
         icon_path: '../../../assets/svgs/amministrazione.svg',
         subMenu:[
             {
-                label: 'Conti corrente',
-                subMenu: [],
-                icon_path: '',
-            },
-            {
-                label: 'Clienti',
-                subMenu: [],
-                icon_path: '',
-            },
-            {
-                label: 'Fornitori',
-                subMenu: [],
-                icon_path: '',
-            },
-            {
-                label: 'Entrate',
-                subMenu: [],
-                icon_path: '',
-            },
-            {
-                label: 'Uscite',
-                subMenu: [],
-                icon_path: '',
-            },
-            {
                 label: 'Fatturazione',
+                subMenu: [
+                    {
+                        label: 'Fatture Elettroniche',
+                        subMenu: [],
+                        icon_path: '',
+                    },
+                    {
+                        label: 'Note di credito',
+                        subMenu: [],
+                        icon_path: '',
+                    },
+                    {
+                        label: 'Ricevute',
+                        subMenu: [
+                            {
+                                label: 'Generiche',
+                                subMenu: [],
+                                icon_path: '',
+                            },
+                            {
+                                label: 'Soci/Tesserati',
+                                subMenu: [],
+                                icon_path: '',
+                            },
+                        ],
+                        icon_path: '',
+                    },
+                    {
+                        label: 'Rubrica',
+                        subMenu: [],
+                        icon_path: '',
+                    },
+                    {
+                        label: 'Iva',
+                        subMenu: [],
+                        icon_path: '',
+                    },
+                    {
+                        label: 'Codici IVA',
+                        subMenu: [],
+                        icon_path: '',
+                    },
+                    {
+                        label: 'Numeratori',
+                        subMenu: [],
+                        icon_path: '',
+                    },
+                ],
+                icon_path: '',
+            },
+        ],
+    },
+    {
+        label:'Lavoro Sportivo',
+        icon_path: '../../../assets/svgs/amministrazione.svg',
+        subMenu:[
+            {
+                label: 'Indennità, Compensi e Premi',
                 subMenu: [],
                 icon_path: '',
             },
             {
-                label: 'Ricevute',
+                label: 'Riepilogo INPS/IRPEF',
                 subMenu: [],
                 icon_path: '',
             },
             {
-                label: 'Soggetti Compensi & Rimborsi',
+                label: 'Contabilizzazione INPS',
                 subMenu: [],
                 icon_path: '',
             },
             {
-                label: 'Codici IVA',
-                subMenu: [],
-                icon_path: '',
-            },
-            {
-                label: 'Numeratori',
-                subMenu: [],
-                icon_path: '',
-            },
-            {
-                label: 'Centri di Costo',
-                subMenu: [],
-                icon_path: '',
-            },
-            {
-                label: 'Piano dei Conti',
-                subMenu: [],
-                icon_path: '',
-            },
-            {
-                label: 'Bilancio Preventivo',
-                subMenu: [],
-                icon_path: '',
-            },
-            {
-                label: 'Partitario',
-                subMenu: [],
-                icon_path: '',
-            },
-            {
-                label: 'Iva',
-                subMenu: [],
-                icon_path: '',
-            },
-            {
-                label: 'Gestione Cassa',
-                subMenu: [],
-                icon_path: '',
-            },
-            {
-                label: 'Giroconto',
-                subMenu: [],
-                icon_path: '',
-            },
-            {
-                label: 'Immobilizzazioni',
+                label: 'Ritenuta d\'acconto',
                 subMenu: [],
                 icon_path: '',
             },
         ],
+    },
+    { 
+        label: 'Cassa',
+        icon_path: '../../../assets/svgs/impostazioni.svg',
+        subMenu: [
+            { 
+                label: 'Entrate',
+                icon_path: '../../../assets/svgs/impostazioni.svg',
+                subMenu: []
+            },
+            { 
+                label: 'Uscite',
+                icon_path: '../../../assets/svgs/impostazioni.svg',
+                subMenu: []
+            },
+            { 
+                label: 'Gestione cassa',
+                icon_path: '../../../assets/svgs/impostazioni.svg',
+                subMenu: [
+                    { 
+                        label: 'Cassa',
+                        icon_path: '../../../assets/svgs/impostazioni.svg',
+                        subMenu: []
+                    },
+                    { 
+                        label: 'Conti Correnti',
+                        icon_path: '../../../assets/svgs/impostazioni.svg',
+                        subMenu: []
+                    },
+                    { 
+                        label: 'Giroconto',
+                        icon_path: '../../../assets/svgs/impostazioni.svg',
+                        subMenu: []
+                    }
+                ]
+            }
+        ]
+    },
+    { 
+        label: 'Immobilizzazioni',
+        icon_path: '../../../assets/svgs/impostazioni.svg',
+        subMenu: []
+    },
+    { 
+        label: 'Documenti Fiscali',
+        icon_path: '../../../assets/svgs/impostazioni.svg',
+        subMenu: [
+            { 
+                label: 'Piano dei conti',
+                icon_path: '../../../assets/svgs/impostazioni.svg',
+                subMenu: []
+            },
+            { 
+                label: 'Prima nota',
+                icon_path: '../../../assets/svgs/impostazioni.svg',
+                subMenu: []
+            },
+            { 
+                label: 'Rendiconto',
+                icon_path: '../../../assets/svgs/impostazioni.svg',
+                subMenu: []
+            },
+            { 
+                label: 'Partitario',
+                icon_path: '../../../assets/svgs/impostazioni.svg',
+                subMenu: []
+            },
+            { 
+                label: 'Bilancio',
+                icon_path: '../../../assets/svgs/impostazioni.svg',
+                subMenu: [
+                    { 
+                        label: 'Preventivo',
+                        icon_path: '../../../assets/svgs/impostazioni.svg',
+                        subMenu: []
+                    },
+                    { 
+                        label: 'Consuntivo',
+                        icon_path: '../../../assets/svgs/impostazioni.svg',
+                        subMenu: []
+                    }
+                ]
+            },
+            { 
+                label: 'Libro soci',
+                icon_path: '../../../assets/svgs/impostazioni.svg',
+                subMenu: []
+            },
+            { 
+                label: 'Indennità, Compensi e Premi',
+                icon_path: '../../../assets/svgs/impostazioni.svg',
+                subMenu: []
+            }
+        ]
     },
     { 
         label: 'Utiliy',

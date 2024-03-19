@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HomePageComponent {
 
-  contentOpened: string = "Dashboard";
+  contentOpened: string = "soci";
 
   topBarButton: {label:string, path: string}[] = [
     {label:"Notifiche", path:'../../../assets/svgs/notifiche_dark.svg'},

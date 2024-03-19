@@ -1,3 +1,5 @@
+@import "../../../assets/styles/const.scss";
+
 .mainContainer {
     width: 100%;
     height: calc(100% - 50px);
@@ -8,18 +10,45 @@
     }
 
     &__header {
-        height: 50px;
+        height: 100px;
         display: flex;
-        justify-content: start;
-        align-items: flex-end;
+        justify-content: space-between;
+        align-items: center;
+        // background-color: yellow;
+        gap: 40px;
         
         &--label {
-            width: auto;
-            height: auto;
-            font-family: Outfit;
-            font-weight: 400;
-            font-size: 40px;
             margin-left: 50px;
+            font-size: 50px;
+            font-family: Outfit;
+        }
+
+        &__buttonsContainer {
+            margin-right: 40px;
+            height: 100%;
+            width: auto;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            // background-color: red;
+            gap: 15px;
+            
+            &__button {
+                font-size: 20px;
+                font-weight: 300;
+                font-family: Outfit;
+                padding-left: 10px;
+                padding-right: 10px;
+                margin-top: 10px;
+                width: auto;
+                height: 40px;
+                border-radius: 10px;
+                background-color: $secondary_color;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                color: $base_color;
+            }
         }
     }
 }
